@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Facts Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #00ff88;
+            margin-bottom: 2rem;
+        }
+
+        .fact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #fact-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        #new-fact-btn {
+            background: #00ff88;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            color: #1a1a2e;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #new-fact-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌎 Amazing Space Facts 🚀</h1>
+        <div class="fact-card">
+            <p id="fact-text">Click the button to get a random space fact!</p>
+        </div>
+        <button id="new-fact-btn">Get New Fact</button>
+    </div>
+
+    <script>
+        const spaceFacts = {
+            "spaceFacts": [
+                {
+                    "id": 1,
+                    "fact": "Light from the Sun takes approximately 8 minutes and 20 seconds to reach Earth."
+                },
+                {
+                    "id": 2,
+                    "fact": "One day on Venus is longer than one year on Venus. Venus takes 243 Earth days to rotate on its axis."
+                },
+                {
+                    "id": 3,
+                    "fact": "The biggest known star, UY Scuti, is around 1,700 times larger than our Sun."
+                },
+                {
+                    "id": 4,
+                    "fact": "The footprints left by Apollo astronauts on the Moon will last for at least 100 million years."
+                },
+                {
+                    "id": 5,
+                    "fact": "The Great Red Spot on Jupiter is a storm that has been raging for at least 400 years."
+                },
+                {
+                    "id": 6,
+                    "fact": "A day on Mars is only slightly longer than a day on Earth, at 24 hours and 37 minutes."
+                },
+                {
+                    "id": 7,
+                    "fact": "The Milky Way galaxy is estimated to contain 100-400 billion stars."
+                },
+                {
+                    "id": 8,
+                    "fact": "There are more stars in the universe than grains of sand on all of Earth's beaches."
+                },
+                {
+                    "id": 9,
+                    "fact": "Saturn's rings are mostly made up of water ice and rock."
+                },
+                {
+                    "id": 10,
+                    "fact": "The largest volcano in the solar system is Olympus Mons on Mars, about 3 times taller than Mount Everest."
+                },
+                {
+                    "id": 11,
+                    "fact": "Black holes are so dense that not even light can escape their gravitational pull."
+                },
+                {
+                    "id": 12,
+                    "fact": "The space between galaxies is not completely empty but contains very thin gas."
+                },
+                {
+                    "id": 13,
+                    "fact": "Astronauts grow about 2 inches taller when they're in space due to the lack of gravity."
+                },
+                {
+                    "id": 14,
+                    "fact": "The temperature in the void of space is about -270.45 degrees Celsius (-454.81 Fahrenheit)."
+                },
+                {
+                    "id": 15,
+                    "fact": "There are more than 100 billion galaxies in the observable universe."
+                },
+                {
+                    "id": 16,
+                    "fact": "The first human to journey into space was Yuri Gagarin on April 12, 1961."
+                },
+                {
+                    "id": 17,
+                    "fact": "Neutron stars are so dense that a teaspoon of their material would weigh about 4 billion tons."
+                },
+                {
+                    "id": 18,
+                    "fact": "The International Space Station travels at a speed of about 17,500 miles per hour."
+                },
+                {
+                    "id": 19,
+                    "fact": "Mercury and Venus are the only planets in our solar system that have no moons."
+                },
+                {
+                    "id": 20,
+                    "fact": "The universe is estimated to be about 13.8 billion years old."
+                }
+            ]
+        };
+
+        const factText = document.getElementById('fact-text');
+        const newFactBtn = document.getElementById('new-fact-btn');
+
+        function getRandomFact() {
+            const facts = spaceFacts.spaceFacts;
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            return facts[randomIndex].fact;
+        }
+
+        function displayNewFact() {
+            factText.textContent = getRandomFact();
+        }
+
+        // Display initial fact
+        displayNewFact();
+
+        // Add click event listener to button
+        newFactBtn.addEventListener('click', displayNewFact);
+    </script>
+</body>
+</html>
