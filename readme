@@ -1,0 +1,21 @@
+# Space Facts Generator 🌎 🚀
+
+A simple, elegant web application that displays random interesting facts about space. Built with vanilla HTML, CSS, and JavaScript, this project features a modern, space-themed design with a responsive interface.
+
+## Features
+
+- Display random space facts with a single click
+- 20 curated interesting facts about space
+- Responsive design that works on all devices
+- Modern glassmorphism UI elements
+- Smooth animations and transitions
+
+## Live Demo
+
+To use the application, simply open the `index.html` file in a web browser.
+
+## Installation
+
+1. Clone the repository
+```bash
+git clone [your-repository-url]
